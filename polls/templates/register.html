@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block body %}
+
+      <div class="d-flex justify-content-center">
+        <h3 id="form-register-title">Register</h3>
+      </div>
+
+      {% if messages %}
+      	{% for message in messages %}
+      	  <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+      	{% endfor %}
+      {% endif %}
+
+      <div class="d-flex justify-content-center form_container">
+
+        <form id="register-form" method="POST" action="">
+          {% csrf_token %}
+          <div class="input-group mb-3">
+          {{ form.username | as_crispy_field }}
+          </div>
+          <div class="input-group mb-3">
+          {{ form.first_name | as_crispy_field }}
+          </div>
+          <div class="input-group mb-3">
+            {{ form.last_name | as_crispy_field }}
+          </div>
+          <div class="input-group mb-2">
+          {{ form.email | as_crispy_field }}
+          </div>
+          <div class="input-group mb-2">
+          {{ form.password1 | as_crispy_field }}
+          </div>
+          <div class="input-group mb-2">
+          {{ form.password2 | as_crispy_field }}
+          </div>
+
+          <div class="d-flex justify-content-center mt-3 login_container">
+            <input id="register-btn" class="btn" type="submit" value="Register" style="width: 200px !important">
+          </div>
+        </form>
+      </div>
+
+      <div class="mt-4">
+        <div class="d-flex justify-content-center links">
+          Already have an account? <a href="{% url 'login' %}" class="ml-2">Log in</a>
+        </div>
+      </div>
+
+<script>
+    // set placeholders for form
+		// query all input fields
+		var form_fields = $('input')
+        form_fields[1].placeholder='Create Username..';
+        form_fields[2].placeholder='First Name..';
+        form_fields[3].placeholder='Last Name..';
+		    form_fields[4].placeholder='Email..';
+		    form_fields[5].placeholder='Password..';
+		    form_fields[6].placeholder='Confirm Password..';
+
+    // set one class to input fields
+		for (var field in form_fields){
+			form_fields[field].className += ' form-control input-register'
+		}
+
+	</script>
+
+{% endblock %}

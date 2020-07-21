@@ -1,0 +1,70 @@
+.navbar{
+  background-color: #78003f;
+  height: 100px;
+  margin-bottom: 50px;
+}
+
+#username{
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+#form-login-title, #form-register-title{
+  margin: 20px;
+}
+
+.input-register{
+	width:400px !important;
+}
+
+.requiredField{
+  display: none;
+}
+
+.form-control{
+  width: 150px;
+}
+
+h3{
+  text-align: center;
+}
+
+#username{
+  margin-right: 20px;
+  font-size: 18px;
+  color: white;
+}
+
+#logout-btn, #back-btn, #login-btn, #register-btn{
+  background-color: #e13559;
+  color: white;
+}
+
+#back-btn:hover{
+  background-color: #bf2c4b;
+}
+
+#logout-btn:hover{
+  background-color: #bf2c4b;
+}
+
+.table-row:hover{
+  background-color: #fffafb;
+}
+
+.container{
+  color: #78003f;
+}
+
+#view-task-table{
+  margin-bottom: 40px;
+}
+
+th{
+  color: #78003f;
+}
+
+thead{
+  background-color: #f7cdd6;
+}

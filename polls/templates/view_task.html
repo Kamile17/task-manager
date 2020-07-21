@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block body %}
+
+<table id="view-task-table" class="table">
+  <thead>
+    <tr>
+      <th scope="col" style="width: 35%">Task title</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background-color: #fffafb;">
+      <td>{{ task.task_title }}</td>
+      <td>{{ task.task_description }}</td>
+    </tr>
+  </table>
+<a id="back-btn" href="{% url 'tasks' %}" class="btn btn-sm" role="button" aria-pressed="true">&#x2190; Back to my tasks</a>
+{% endblock %}
