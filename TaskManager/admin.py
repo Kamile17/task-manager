@@ -56,9 +56,10 @@ class AssignedTaskAdmin(admin.ModelAdmin):
 
     # make sure admin can assign tasks only he created
     def formfield_for_foreignkey(self, field, request, **kwargs):
-         if field.name == "task":
-                 kwargs["queryset"] = Task.objects.filter(created_by=request.user.id)
-         return super(AssignedTaskAdmin, self).formfield_for_foreignkey(field, request, **kwargs)
+        if field.name == "task":
+            if not request.user.is_superuser:
+                kwargs["queryset"] = Task.objects.filter(created_by=request.user.id)
+        return super(AssignedTaskAdmin, self).formfield_for_foreignkey(field, request, **kwargs)
 
 
 admin.site.register(Task, TaskAdmin)
