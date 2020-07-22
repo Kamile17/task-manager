@@ -2,14 +2,17 @@
 
 from django.conf import settings
 from django.db import migrations, models
+from django.contrib.auth.models import User
 import django.db.models.deletion
-
+import os
 
 def apply_migration(apps, schema_editor):
     Group = apps.get_model('auth', 'Group')
     Group.objects.bulk_create([
         Group(name=u'Admin'),
     ])
+    User.objects.create_superuser('admin', 'kamilen17@gmail.com', os.getenv('ADMIN_PASSWORD'))
+
 
 class Migration(migrations.Migration):
 
