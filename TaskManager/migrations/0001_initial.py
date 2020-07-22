@@ -38,14 +38,14 @@ class Migration(migrations.Migration):
                 ('task_title', models.CharField(max_length=200, null=True)),
                 ('task_description', models.TextField(max_length=3000, null=True)),
                 ('date_created', models.DateTimeField(auto_now_add=True)),
-                ('assigned_to', models.ManyToManyField(through='polls.AssignedTask', to=settings.AUTH_USER_MODEL)),
+                ('assigned_to', models.ManyToManyField(through='TaskManager.AssignedTask', to=settings.AUTH_USER_MODEL)),
                 ('created_by', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='created_by', to=settings.AUTH_USER_MODEL)),
             ],
         ),
         migrations.AddField(
             model_name='assignedtask',
             name='task',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='polls.Task'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='TaskManager.Task'),
         ),
         migrations.AddField(
             model_name='assignedtask',
