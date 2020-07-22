@@ -4,7 +4,7 @@ from django.conf import settings
 from django.db import migrations, models
 from django.contrib.auth.models import User
 import django.db.models.deletion
-
+import os
 
 def apply_migration(apps, schema_editor):
     Group = apps.get_model('auth', 'Group')
