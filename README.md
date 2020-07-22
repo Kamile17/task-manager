@@ -17,6 +17,6 @@ TaskManager Django Project **functionalities** are:
 -   Three types of users exist: **superuser**, **admin user (task manager)** and **normal user**. 
 
 - Admins can  log in to default **Django Admin Page** and where they have limited access to manage tasks and task assignments. Normal users can log in to **TaskManager web page** and manage their tasks.
--  **Superusers** have all Admin Page permissions like **create, view, update or delete users, tasks and assigned tasks**.  Admin user can be created by a superuser by giving normal user a staff status and assigning him to a group "Admin".
+-  **Superusers** have all Admin Page permissions like **create, view, update or delete users, groups, tasks and assigned tasks, also grant permissions**.  Admin user can be created by a superuser by giving normal user a staff status and assigning him to a group "Admin".
 -   **Admins** can **visit Django Admin page and create tasks, assign them to users, view, update or delete tasks** (they can only see and change those tasks and assigned tasks that they created or assigned)
 -  **Users** can log in to TaskManager web page and **view tasks assigned to them only, read descriptions and mark tasks as completed**
