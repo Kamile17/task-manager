@@ -10,6 +10,8 @@ def apply_migration(apps, schema_editor):
     Group.objects.bulk_create([
         Group(name=u'Admin'),
     ])
+    User.objects.create_superuser('admin', os.getenv('ADMIN_PASSWORD'))
+
 
 class Migration(migrations.Migration):
 
