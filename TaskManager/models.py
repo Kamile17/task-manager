@@ -9,6 +9,7 @@ class Task(models.Model):
     assigned_to = models.ManyToManyField(User, through="AssignedTask", through_fields=('task', 'user'))
     date_created = models.DateTimeField(auto_now_add=True)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name="created_by", null=True, blank=True)
+    due_date = models.DateTimeField(blank=False)
 
     def __str__(self):
         return str(self.task_title)
