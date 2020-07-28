@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  
+
   var user = '{{ request.user }}';
   function getToken(name) {
     var cookieValue = null;
@@ -23,7 +23,6 @@ $(document).ready(function(){
     select[i].addEventListener('change', function(){
       var taskId = this.getAttribute("data-taskId")
       var status = this.value
-      console.log(taskId, status)
       updateStatus(taskId, status)
       $("#complete-task-form").submit();
     });
@@ -32,7 +31,6 @@ $(document).ready(function(){
 
   function updateStatus(taskId, status){
     var url = "/update_status/"
-    console.log("url: ", url)
     fetch(url, {
       method: "POST",
       headers:{

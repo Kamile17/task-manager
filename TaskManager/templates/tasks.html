@@ -3,7 +3,7 @@
 {% block body %}
 <table class="table">
   <thead>
-    {% if not assigned_tasks  %}
+    {% if not tasks  %}
       <h3>You have no tasks</h3>
     {% else %}
     <tr>
@@ -15,16 +15,15 @@
   </thead>
 
   <tbody>
-    {% for assigned_task in assigned_tasks %}
+
       {% for task in tasks %}
-        {% if assigned_task.task_id == task.id %}
           <tr class="table-row" id="row-{task.id}">
-            <th scope="row">{{ forloop.parentloop.counter }}</th>
-            <td><a href="{% url 'view_task' %}?taskId={{ task.id }}"">{{ task.task_title }}</a></td>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td><a href="{% url 'view_task' %}?taskId={{ task.task.id }}"">{{ task.task.task_title }}</a></td>
             <td>
-              {% if assigned_task.status == 'completed' %}
+              {% if task.status == 'completed' %}
                 Completed
-              {% elif  assigned_task.status == 'not_completed' %}
+              {% elif task.status == 'not_completed' %}
                 Not completed
               {% endif %}
             </td>
@@ -32,24 +31,21 @@
               <div class="form-group">
                 <form id="complete-task-form" method="POST" action="">
                 {% csrf_token %}
-                  <select class="form-control status-dropdown" data-taskId="{{task.id}}">
-                    {% if assigned_task.status == 'not_completed' %}
+                  <select class="form-control status-dropdown" data-taskId="{{task.task.id}}">
+                    {% if task.status == 'not_completed' %}
                       <option value="not_completed">Not completed</option>
                       <option value="completed">Completed</option>
-                    {% elif assigned_task.status == 'completed' %}
+                    {% elif task.status == 'completed' %}
                       <option value="completed">Completed</option>
                       <option value="not_completed">Not completed</option>
                     {% endif %}
-
                   </select>
                 </form>
               </div>
             </td>
-
           </tr>
-        {% endif %}
       {% endfor %}
-    {% endfor %}
+
   </tbody>
   {% endif %}
 </table>

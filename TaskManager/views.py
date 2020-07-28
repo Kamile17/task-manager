@@ -57,17 +57,17 @@ def logoutUser(request):
 @login_required
 def tasks(request):
     user_id = request.user.id
-    tasks = Task.objects.all()
     assigned_tasks = AssignedTask.objects.filter(user_id=user_id)
-
-    return render(request, 'tasks.html', {'assigned_tasks': assigned_tasks, 'tasks': tasks})
+    tasks = assigned_tasks.prefetch_related('task')
+    # to get assigned task data - task.assigned_to;
+    # to get task data - task.task.description
+    return render(request, 'tasks.html', {'tasks': tasks})
 
 
 @login_required
 def viewTask(request):
     task_id = request.GET.get('taskId')
     task_viewed = Task.objects.get(id=task_id)
-
     user_id = request.user.id
     assigned_task = AssignedTask.objects.filter(user_id=user_id, task_id=task_id)
     if assigned_task:
