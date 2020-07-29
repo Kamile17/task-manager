@@ -1,5 +1,5 @@
 
-# Welcome to TaskManager!
+# Welcome to TaskManager!!
 
 This is my **Django project**. **TaskManager** is a web page where as a user you can register, log in and manage your tasks whereas page admins can create tasks and assign them to you.
 
