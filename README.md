@@ -21,6 +21,7 @@ TaskManager Django Project **functionalities** are:
 -   **Admins** can **visit Django Admin page and create tasks, assign them to users, view, update or delete tasks** (they can only see and change those tasks and assigned tasks that they created or assigned)
 -  **Users** can log in to TaskManager web page and **view tasks assigned to them only, read descriptions and mark tasks as completed**
 
+<br/><br/>
 
 
 ![Alt text](https://github.com/Kamile17/task-manager/blob/master/project-images/3-task-list-SarahM.jpg)
