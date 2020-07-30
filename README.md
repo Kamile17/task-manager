@@ -22,6 +22,7 @@ TaskManager Django Project **functionalities** are:
 -  **Users** can log in to TaskManager web page and **view tasks assigned to them only, read descriptions and mark tasks as completed**
 
 <br/><br/>
-
+Live on https://task-manager-kn.herokuapp.com
+<br/><br/>
 
 ![Alt text](https://github.com/Kamile17/task-manager/blob/master/project-images/3-task-list-SarahM.jpg)
