@@ -20,3 +20,7 @@ TaskManager Django Project **functionalities** are:
 -  **Superusers** have all Admin Page permissions like **create, view, update or delete users, groups, tasks and assigned tasks, also grant permissions**.  Admin user can be created by a superuser by giving normal user a staff status and assigning him to a group "Admin".
 -   **Admins** can **visit Django Admin page and create tasks, assign them to users, view, update or delete tasks** (they can only see and change those tasks and assigned tasks that they created or assigned)
 -  **Users** can log in to TaskManager web page and **view tasks assigned to them only, read descriptions and mark tasks as completed**
+
+
+
+![Alt text](https://github.com/Kamile17/task-manager/blob/master/project-images/3-task-list-SarahM.jpg)
